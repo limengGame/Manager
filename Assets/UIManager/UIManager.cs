@@ -65,6 +65,7 @@ public class UIManager : Singleton<UIManager> {
         BaseUIController controller = FindUIControllerByType(typeof(T));
         HideLayerObjects(controller);
 
+
         controller.Show();
         return controller as T;
     }

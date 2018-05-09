@@ -3,8 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Main : MonoBehaviour {
-    
-	void Start () {
+
+    public static Main Instance
+    {
+        get;
+        private set;
+    }
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+    void Start () {
         UIManager.CreateInstance();
         UIControllerManager.CreateInstance();
         UIManager.Instance.Init();
